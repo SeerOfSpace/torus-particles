@@ -86,7 +86,7 @@ public class Graphics {
 		for(int i = 0; i < pList.size(); i++) {
 			tasks.add(new Task(i, dt));
 		}
-		ExecutorService executor = Executors.newFixedThreadPool(6);
+		ExecutorService executor = Executors.newWorkStealingPool();
 		
 		while(!stop) {
 			dt.num = (t2 - t1) / 1000.0 * timeScale;
